@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="FlashcardApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training-ai-data-4" translatesAutoresizingMaskIntoConstraints="NO" id="5QI-b3-z5L">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="mKE-l5-9Sr">
+                                <rect key="frame" x="106.00000000000001" y="230" width="181.33333333333337" height="131"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oa-KW-AWQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="181.33333333333334" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="FlashCards"/>
+                                        <connections>
+                                            <action selector="flashCardsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bnd-ug-9oq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEa-4x-VJx">
+                                        <rect key="frame" x="0.0" y="48.333333333333314" width="181.33333333333334" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Study Mode"/>
+                                        <connections>
+                                            <action selector="studyModePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eRV-fB-zAU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQu-66-Rhi">
+                                        <rect key="frame" x="0.0" y="96.666666666666686" width="181.33333333333334" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Why use flashcards?"/>
+                                        <connections>
+                                            <action selector="learnMorePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZP-2h-Rki"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-tG-a0M">
+                                <rect key="frame" x="136" y="102" width="121.33333333333331" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCr-1v-8Ow">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.098067499700000005" green="0.19651392100000001" blue="0.30981734399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.86640393729999998" green="0.84734421969999996" blue="0.83529204130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mKE-l5-9Sr" firstAttribute="top" secondItem="iiq-tG-a0M" secondAttribute="bottom" constant="80" id="65m-3t-QKo"/>
+                            <constraint firstItem="5QI-b3-z5L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="C8c-k4-5cF"/>
+                            <constraint firstItem="5QI-b3-z5L" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Ndg-3S-vnp"/>
+                            <constraint firstItem="5QI-b3-z5L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Sro-hp-vM2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mKE-l5-9Sr" secondAttribute="bottom" constant="457" id="Vfb-ey-X71"/>
+                            <constraint firstAttribute="bottom" secondItem="5QI-b3-z5L" secondAttribute="bottom" id="fe4-Ze-58f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mKE-l5-9Sr" secondAttribute="trailing" constant="105.67" id="kci-86-CMO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iiq-tG-a0M" secondAttribute="trailing" constant="135.66999999999999" id="kf4-aj-4q8"/>
+                            <constraint firstItem="mKE-l5-9Sr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="nFv-ur-QFo"/>
+                            <constraint firstItem="iiq-tG-a0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="sYK-R5-w3d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="IMA-uw-nOP" kind="presentation" identifier="goToLearnMore" id="1ZP-tP-kBx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+        <!--Learn View Controller-->
+        <scene sceneID="6vY-A1-0eW">
+            <objects>
+                <viewController id="IMA-uw-nOP" customClass="LearnViewController" customModule="FlashcardApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vJS-4Y-i2Y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training-ai-data-4" translatesAutoresizingMaskIntoConstraints="NO" id="4fK-6L-tGb">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mb9-wV-ztB">
+                                <rect key="frame" x="49" y="107" width="295.33333333333331" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why use flashCards?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvf-6q-NOh">
+                                        <rect key="frame" x="0.0" y="0.0" width="295.33333333333331" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SQ9-RC-gHx">
+                                <rect key="frame" x="49.666666666666657" y="193" width="294" height="243.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="1iP-TA-TZ4">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="243.66666666666666"/>
+                                        <string key="text">Flashcards are an incredibly effective learning tool that leverages the power of active recall and spaced repetition, key strategies proven to enhance memory retention. When you actively try to recall an answer, you strengthen neural pathways, making it easier to access that information later. This process of retrieval helps to cement the knowledge in your long-term memory, creating new neural connections in your brain.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TfU-na-Oe2"/>
+                        <color key="backgroundColor" red="0.098067499700000005" green="0.19651392100000001" blue="0.30981734399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.86640393729999998" green="0.84734421969999996" blue="0.83529204130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="SQ9-RC-gHx" firstAttribute="leading" secondItem="TfU-na-Oe2" secondAttribute="leading" constant="49.670000000000002" id="3IK-Dx-hnX"/>
+                            <constraint firstItem="TfU-na-Oe2" firstAttribute="trailing" secondItem="SQ9-RC-gHx" secondAttribute="trailing" constant="49.329999999999998" id="3h2-Zi-E8l"/>
+                            <constraint firstItem="mb9-wV-ztB" firstAttribute="top" secondItem="TfU-na-Oe2" secondAttribute="top" constant="107" id="9xA-11-Eru"/>
+                            <constraint firstAttribute="bottom" secondItem="4fK-6L-tGb" secondAttribute="bottom" id="AMC-7k-Tq4"/>
+                            <constraint firstItem="4fK-6L-tGb" firstAttribute="top" secondItem="vJS-4Y-i2Y" secondAttribute="top" id="WQf-6v-mXQ"/>
+                            <constraint firstItem="mb9-wV-ztB" firstAttribute="leading" secondItem="TfU-na-Oe2" secondAttribute="leading" constant="49" id="g1h-wL-EBN"/>
+                            <constraint firstItem="4fK-6L-tGb" firstAttribute="trailing" secondItem="vJS-4Y-i2Y" secondAttribute="trailing" id="gmG-OA-nay"/>
+                            <constraint firstItem="4fK-6L-tGb" firstAttribute="leading" secondItem="vJS-4Y-i2Y" secondAttribute="leading" id="hZ4-Oy-KNn"/>
+                            <constraint firstItem="mb9-wV-ztB" firstAttribute="centerX" secondItem="SQ9-RC-gHx" secondAttribute="centerX" id="tE4-18-9u2"/>
+                            <constraint firstItem="SQ9-RC-gHx" firstAttribute="top" secondItem="mb9-wV-ztB" secondAttribute="bottom" constant="50" id="zOU-zZ-Qpr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQR-qJ-9Si" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820.61068702290072" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="training-ai-data-4" width="1378" height="3285"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
