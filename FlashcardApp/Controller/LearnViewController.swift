@@ -7,7 +7,9 @@
 
 import UIKit
 class LearnViewController: UIViewController {
-    
+    override func viewDidLoad() {
+        //title = "Learn More"
+    }
 }
 //TODO Redo layout constraintsjj
 //TODO refactor Stacks and improve visually

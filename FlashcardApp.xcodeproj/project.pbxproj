@@ -12,6 +12,7 @@
 		3331FBB22B86350400DC9319 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331FBB12B86350400DC9319 /* FlashCard.swift */; };
 		3331FBB42B86366700DC9319 /* StudyModeBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331FBB32B86366700DC9319 /* StudyModeBrain.swift */; };
 		33B46CAC2B84E09B009BCBFF /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B46CAB2B84E09B009BCBFF /* LearnViewController.swift */; };
+		33BF274A2B88149A0015CBE5 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF27492B88149A0015CBE5 /* CategoryViewController.swift */; };
 		33E0F94E2B841B5400C2F7E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0F94D2B841B5400C2F7E0 /* AppDelegate.swift */; };
 		33E0F9502B841B5400C2F7E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0F94F2B841B5400C2F7E0 /* SceneDelegate.swift */; };
 		33E0F9522B841B5400C2F7E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0F9512B841B5400C2F7E0 /* HomeViewController.swift */; };
@@ -26,6 +27,7 @@
 		3331FBB12B86350400DC9319 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		3331FBB32B86366700DC9319 /* StudyModeBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyModeBrain.swift; sourceTree = "<group>"; };
 		33B46CAB2B84E09B009BCBFF /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		33BF27492B88149A0015CBE5 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		33E0F94A2B841B5400C2F7E0 /* FlashcardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashcardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E0F94D2B841B5400C2F7E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33E0F94F2B841B5400C2F7E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				33E0F9512B841B5400C2F7E0 /* HomeViewController.swift */,
 				33B46CAB2B84E09B009BCBFF /* LearnViewController.swift */,
+				33BF27492B88149A0015CBE5 /* CategoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				33E0F94E2B841B5400C2F7E0 /* AppDelegate.swift in Sources */,
 				3331FBB02B86327700DC9319 /* SubCategory.swift in Sources */,
 				3331FBB22B86350400DC9319 /* FlashCard.swift in Sources */,
+				33BF274A2B88149A0015CBE5 /* CategoryViewController.swift in Sources */,
 				33E0F9502B841B5400C2F7E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

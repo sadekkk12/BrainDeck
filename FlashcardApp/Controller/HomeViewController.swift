@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //title = "Home"
         
         //Testing Catgory and SubCategory creation
         let mainCategory = Category(name: "Languages")
@@ -66,7 +67,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func learnMorePressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToLearnMore", sender: self)
+        //self.performSegue(withIdentifier: "goToLearnMore", sender: self)
     }
     //TODO Redo layout constraints
     //TODO refactor Stacks and improve visually
