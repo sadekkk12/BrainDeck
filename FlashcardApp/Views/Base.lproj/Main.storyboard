@@ -16,14 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training-ai-data-4" translatesAutoresizingMaskIntoConstraints="NO" id="5QI-b3-z5L">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background image" translatesAutoresizingMaskIntoConstraints="NO" id="5QI-b3-z5L">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="mKE-l5-9Sr">
-                                <rect key="frame" x="106.00000000000001" y="230" width="181.33333333333337" height="131"/>
+                                <rect key="frame" x="106.00000000000001" y="230" width="181.33333333333337" height="179.33333333333337"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oa-KW-AWQ">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oa-KW-AWQ">
                                         <rect key="frame" x="0.0" y="0.0" width="181.33333333333334" height="34.333333333333336"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="FlashCards"/>
                                         <connections>
@@ -32,14 +33,28 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEa-4x-VJx">
                                         <rect key="frame" x="0.0" y="48.333333333333314" width="181.33333333333334" height="34.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.333333333333343" id="cLb-tH-IWY"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Study Mode"/>
                                         <connections>
                                             <action selector="studyModePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eRV-fB-zAU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQu-66-Rhi">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-ZV-umF">
                                         <rect key="frame" x="0.0" y="96.666666666666686" width="181.33333333333334" height="34.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.333333333333343" id="c7O-lW-SSK"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="How to"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQu-66-Rhi">
+                                        <rect key="frame" x="0.0" y="145" width="181.33333333333334" height="34.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.333333333333343" id="IPP-ec-lql"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Why use flashcards?"/>
                                         <connections>
@@ -49,12 +64,12 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-tG-a0M">
-                                <rect key="frame" x="136" y="102" width="121.33333333333331" height="48"/>
+                                <rect key="frame" x="100.66666666666669" y="102" width="192" height="48"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCr-1v-8Ow">
-                                        <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BrainDeck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCr-1v-8Ow">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="48"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -64,16 +79,18 @@
                         <color key="backgroundColor" red="0.098067499700000005" green="0.19651392100000001" blue="0.30981734399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.86640393729999998" green="0.84734421969999996" blue="0.83529204130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="mKE-l5-9Sr" secondAttribute="bottom" constant="408.67000000000002" id="2ri-Kl-koZ"/>
                             <constraint firstItem="mKE-l5-9Sr" firstAttribute="top" secondItem="iiq-tG-a0M" secondAttribute="bottom" constant="80" id="65m-3t-QKo"/>
                             <constraint firstItem="5QI-b3-z5L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="C8c-k4-5cF"/>
                             <constraint firstItem="5QI-b3-z5L" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Ndg-3S-vnp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iiq-tG-a0M" secondAttribute="trailing" constant="100.5" id="PnU-1y-mI3"/>
                             <constraint firstItem="5QI-b3-z5L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Sro-hp-vM2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mKE-l5-9Sr" secondAttribute="bottom" constant="457" id="Vfb-ey-X71"/>
+                            <constraint firstItem="iiq-tG-a0M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="Z1k-Ld-Jhs"/>
+                            <constraint firstItem="iiq-tG-a0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100.5" id="dvg-EV-kpH"/>
                             <constraint firstAttribute="bottom" secondItem="5QI-b3-z5L" secondAttribute="bottom" id="fe4-Ze-58f"/>
+                            <constraint firstItem="mKE-l5-9Sr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="230" id="h9v-XZ-NcV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mKE-l5-9Sr" secondAttribute="trailing" constant="105.67" id="kci-86-CMO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iiq-tG-a0M" secondAttribute="trailing" constant="135.66999999999999" id="kf4-aj-4q8"/>
                             <constraint firstItem="mKE-l5-9Sr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="nFv-ur-QFo"/>
-                            <constraint firstItem="iiq-tG-a0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="sYK-R5-w3d"/>
                         </constraints>
                     </view>
                     <connections>
@@ -92,28 +109,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="training-ai-data-4" translatesAutoresizingMaskIntoConstraints="NO" id="4fK-6L-tGb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background image" translatesAutoresizingMaskIntoConstraints="NO" id="4fK-6L-tGb">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mb9-wV-ztB">
-                                <rect key="frame" x="49" y="107" width="295.33333333333331" height="36"/>
+                                <rect key="frame" x="45" y="107" width="303" height="36"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why use flashCards?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvf-6q-NOh">
-                                        <rect key="frame" x="0.0" y="0.0" width="295.33333333333331" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why use FlashCards?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvf-6q-NOh">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SQ9-RC-gHx">
-                                <rect key="frame" x="49.666666666666657" y="193" width="294" height="243.66666666666663"/>
+                                <rect key="frame" x="45" y="193" width="303" height="243.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="1iP-TA-TZ4">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="243.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="243.66666666666666"/>
                                         <string key="text">Flashcards are an incredibly effective learning tool that leverages the power of active recall and spaced repetition, key strategies proven to enhance memory retention. When you actively try to recall an answer, you strengthen neural pathways, making it easier to access that information later. This process of retrieval helps to cement the knowledge in your long-term memory, creating new neural connections in your brain.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -123,12 +140,13 @@
                         <color key="backgroundColor" red="0.098067499700000005" green="0.19651392100000001" blue="0.30981734399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.86640393729999998" green="0.84734421969999996" blue="0.83529204130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="SQ9-RC-gHx" firstAttribute="leading" secondItem="TfU-na-Oe2" secondAttribute="leading" constant="49.670000000000002" id="3IK-Dx-hnX"/>
-                            <constraint firstItem="TfU-na-Oe2" firstAttribute="trailing" secondItem="SQ9-RC-gHx" secondAttribute="trailing" constant="49.329999999999998" id="3h2-Zi-E8l"/>
+                            <constraint firstItem="SQ9-RC-gHx" firstAttribute="leading" secondItem="TfU-na-Oe2" secondAttribute="leading" constant="45" id="3IK-Dx-hnX"/>
+                            <constraint firstItem="TfU-na-Oe2" firstAttribute="trailing" secondItem="SQ9-RC-gHx" secondAttribute="trailing" constant="45" id="3h2-Zi-E8l"/>
                             <constraint firstItem="mb9-wV-ztB" firstAttribute="top" secondItem="TfU-na-Oe2" secondAttribute="top" constant="107" id="9xA-11-Eru"/>
                             <constraint firstAttribute="bottom" secondItem="4fK-6L-tGb" secondAttribute="bottom" id="AMC-7k-Tq4"/>
+                            <constraint firstItem="mb9-wV-ztB" firstAttribute="leading" secondItem="TfU-na-Oe2" secondAttribute="leading" constant="45" id="Gsn-r5-kLr"/>
+                            <constraint firstItem="TfU-na-Oe2" firstAttribute="trailing" secondItem="mb9-wV-ztB" secondAttribute="trailing" constant="45" id="Nz4-jJ-WzC"/>
                             <constraint firstItem="4fK-6L-tGb" firstAttribute="top" secondItem="vJS-4Y-i2Y" secondAttribute="top" id="WQf-6v-mXQ"/>
-                            <constraint firstItem="mb9-wV-ztB" firstAttribute="leading" secondItem="TfU-na-Oe2" secondAttribute="leading" constant="49" id="g1h-wL-EBN"/>
                             <constraint firstItem="4fK-6L-tGb" firstAttribute="trailing" secondItem="vJS-4Y-i2Y" secondAttribute="trailing" id="gmG-OA-nay"/>
                             <constraint firstItem="4fK-6L-tGb" firstAttribute="leading" secondItem="vJS-4Y-i2Y" secondAttribute="leading" id="hZ4-Oy-KNn"/>
                             <constraint firstItem="mb9-wV-ztB" firstAttribute="centerX" secondItem="SQ9-RC-gHx" secondAttribute="centerX" id="tE4-18-9u2"/>
@@ -140,9 +158,24 @@
             </objects>
             <point key="canvasLocation" x="820.61068702290072" y="-2.1126760563380285"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="MRL-FP-x3Q">
+            <objects>
+                <viewController id="zdL-i1-6uJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jH6-fp-zs0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0lP-2f-Lc9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uC-LL-Xky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591.6030534351144" y="-2.1126760563380285"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="training-ai-data-4" width="1378" height="3285"/>
+        <image name="Background image" width="1378" height="3285"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
