@@ -1,4 +1,3 @@
-![.](x)
 # Flashcard Study App
 
 This Swift-based Flashcard Study App is an educational tool that helps users learn and memorize information through flashcards. Users can select from various categories and subcategories to focus their study sessions on specific topics.
@@ -13,12 +12,11 @@ This Swift-based Flashcard Study App is an educational tool that helps users lea
 
 ## Screenshots
 
-Include some screenshots of your app here to showcase the user interface.
 
-![.](x)
-![.](x)
-![.](x)
-![.](x)
+<img src="images/HomePage.png"  height="700">      <img src="images/SubCategory.png"  height="700">
+<img src="images/create.png"  height="700">        <img src="images/StudyMode.png"  height="700"> 
+
+
 
 ## Installation & Running Locally
 
