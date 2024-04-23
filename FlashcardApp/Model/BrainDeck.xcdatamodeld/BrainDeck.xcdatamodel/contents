@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G90" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="subCategory" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SubCategory" inverseName="category" inverseEntity="SubCategory"/>
+    </entity>
+    <entity name="FlashCard" representedClassName="FlashCard" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="question" optional="YES" attributeType="String"/>
+        <relationship name="subCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubCategory" inverseName="flashCard" inverseEntity="SubCategory"/>
+    </entity>
+    <entity name="SubCategory" representedClassName="SubCategory" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="subCategory" inverseEntity="Category"/>
+        <relationship name="flashCard" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FlashCard" inverseName="subCategory" inverseEntity="FlashCard"/>
+    </entity>
+</model>

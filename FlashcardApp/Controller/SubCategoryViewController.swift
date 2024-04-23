@@ -1,23 +1,23 @@
 //
-//  CategoryViewController.swift
+//  SubCategoryViewController.swift
 //  FlashcardApp
 //
-//  Created by Sadek on 23/02/2024.
+//  Created by Sadek on 19/04/2024.
 //
 
 import UIKit
 
-class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var tableView: UITableView!
+class SubCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var categories = [Category]()
-    private let cellIdentifier = "CategoryCell"
-
+    @IBOutlet weak var tableView: UITableView!
+    var category: Category?
+    var subcategories: [SubCategory] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        loadCategories()
+        loadFlashcards()
     }
     
     private func configureTableView() {
@@ -29,68 +29,75 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             
             navigationController?.navigationBar.tintColor = UIColor.white
 
-            
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
-            
-            title = "Category"
+        
+        title = category?.name ?? "Subcategories"
+    }
+
+    private func loadFlashcards() {
+        if let subCategorySet = category?.subCategory as? Set<SubCategory> {
+            subcategories = Array(subCategorySet)
+        } else {
+            subcategories = []
+        }
+        tableView.reloadData()
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return subcategories.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoryCell", for: indexPath)
+        cell.textLabel?.text = subcategories[indexPath.row].name
+        return cell
     }
     
-    private func loadCategories() {
-        do {
-            categories = try context.fetch(Category.fetchRequest())
-            tableView.reloadData()
-        } catch {
-            showError(message: "Unable to fetch categories.")
-        }
-    }
+    
     
     private func showError(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-
+    
     @objc private func didTapAdd() {
         let alert = UIAlertController(title: "New Category", message: "Enter new Category", preferredStyle: .alert)
         alert.addTextField()
         alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { [unowned alert] _ in
             if let name = alert.textFields?.first?.text, !name.isEmpty {
-                self.createCategory(name: name)
+                self.createSubCategory(name: name)
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(alert, animated: true)
     }
+    
+    
+    
+    private func createSubCategory(name: String) {
+        let newSubCategory = SubCategory(context: context)
+        newSubCategory.name = name
+        category?.addToSubCategory(newSubCategory) // Use the generated accessor to add to the relationship set
 
-    private func createCategory(name: String) {
-        let newCategory = Category(context: context)
-        newCategory.name = name
         saveContext()
     }
+
 
     private func saveContext() {
         do {
             try context.save()
-            loadCategories()
+            loadFlashcards()
         } catch {
             showError(message: "Unable to save category.")
         }
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = categories[indexPath.row].name
-        return cell
-    }
 
     // MARK: - Swipe Actions
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
-            self.deleteCategory(at: indexPath)
+            self.deleteSubCategory(at: indexPath)
             completionHandler(true)
         }
         let editAction = UIContextualAction(style: .normal, title: "Edit") { action, view, completionHandler in
@@ -102,37 +109,37 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
 
-    private func deleteCategory(at indexPath: IndexPath) {
-        context.delete(categories[indexPath.row])
+    private func deleteSubCategory(at indexPath: IndexPath) {
+        context.delete(subcategories[indexPath.row])
         saveContext()
     }
 
     private func showEditAlert(for indexPath: IndexPath) {
         let alert = UIAlertController(title: "Edit Category", message: "Edit your Category", preferredStyle: .alert)
         alert.addTextField { textField in
-            textField.text = self.categories[indexPath.row].name
+            textField.text = self.subcategories[indexPath.row].name
         }
         alert.addAction(UIAlertAction(title: "Save", style: .default) { _ in
             if let newName = alert.textFields?.first?.text, !newName.isEmpty {
-                self.updateCategory(at: indexPath, with: newName)
+                self.updateSubCategory(at: indexPath, with: newName)
             }
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(alert, animated: true)
     }
 
-    private func updateCategory(at indexPath: IndexPath, with newName: String) {
-        let category = categories[indexPath.row]
+    private func updateSubCategory(at indexPath: IndexPath, with newName: String) {
+        let category = subcategories[indexPath.row]
         category.name = newName
         saveContext()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil) 
-        if let subCategoryVC = storyboard.instantiateViewController(withIdentifier: "SubCategoryViewController") as? SubCategoryViewController {
-            subCategoryVC.category = categories[indexPath.row]
-            navigationController?.pushViewController(subCategoryVC, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let flashCardVC = storyboard.instantiateViewController(withIdentifier: "FlashcardViewController") as? FlashcardViewController {
+            flashCardVC.subCategory = subcategories[indexPath.row]
+            navigationController?.pushViewController(flashCardVC, animated: true)
         }
     }
-
+    
 }

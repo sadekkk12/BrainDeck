@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3331FBAE2B86316400DC9319 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331FBAD2B86316400DC9319 /* Category.swift */; };
-		3331FBB02B86327700DC9319 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331FBAF2B86327700DC9319 /* SubCategory.swift */; };
-		3331FBB22B86350400DC9319 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331FBB12B86350400DC9319 /* FlashCard.swift */; };
+		331D0B712BD2A7D3003223A8 /* BrainDeck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 331D0B6F2BD2A7D3003223A8 /* BrainDeck.xcdatamodeld */; };
+		331D0B9C2BD2EA32003223A8 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0B962BD2EA32003223A8 /* Category+CoreDataClass.swift */; };
+		331D0B9D2BD2EA32003223A8 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0B972BD2EA32003223A8 /* Category+CoreDataProperties.swift */; };
+		331D0B9E2BD2EA32003223A8 /* SubCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0B982BD2EA32003223A8 /* SubCategory+CoreDataClass.swift */; };
+		331D0B9F2BD2EA32003223A8 /* SubCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0B992BD2EA32003223A8 /* SubCategory+CoreDataProperties.swift */; };
+		331D0BA02BD2EA32003223A8 /* FlashCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0B9A2BD2EA32003223A8 /* FlashCard+CoreDataClass.swift */; };
+		331D0BA12BD2EA32003223A8 /* FlashCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0B9B2BD2EA32003223A8 /* FlashCard+CoreDataProperties.swift */; };
+		331D0BA32BD317AB003223A8 /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0BA22BD317AB003223A8 /* SubCategoryViewController.swift */; };
+		331D0BA72BD33A60003223A8 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0BA62BD33A60003223A8 /* FlashcardViewController.swift */; };
+		331D0BA92BD3CE28003223A8 /* FlashcardFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0BA82BD3CE28003223A8 /* FlashcardFormViewController.swift */; };
+		331D0BAB2BD53C2E003223A8 /* StudyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0BAA2BD53C2E003223A8 /* StudyModeViewController.swift */; };
+		331D0BAD2BD5B02C003223A8 /* DeckSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D0BAC2BD5B02C003223A8 /* DeckSelectorViewController.swift */; };
 		3331FBB42B86366700DC9319 /* StudyModeBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331FBB32B86366700DC9319 /* StudyModeBrain.swift */; };
 		33B46CAC2B84E09B009BCBFF /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B46CAB2B84E09B009BCBFF /* LearnViewController.swift */; };
 		33BF274A2B88149A0015CBE5 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF27492B88149A0015CBE5 /* CategoryViewController.swift */; };
@@ -22,9 +31,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3331FBAD2B86316400DC9319 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		3331FBAF2B86327700DC9319 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
-		3331FBB12B86350400DC9319 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		331D0B702BD2A7D3003223A8 /* BrainDeck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrainDeck.xcdatamodel; sourceTree = "<group>"; };
+		331D0B962BD2EA32003223A8 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		331D0B972BD2EA32003223A8 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		331D0B982BD2EA32003223A8 /* SubCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		331D0B992BD2EA32003223A8 /* SubCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		331D0B9A2BD2EA32003223A8 /* FlashCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlashCard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		331D0B9B2BD2EA32003223A8 /* FlashCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlashCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		331D0BA22BD317AB003223A8 /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
+		331D0BA62BD33A60003223A8 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
+		331D0BA82BD3CE28003223A8 /* FlashcardFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardFormViewController.swift; sourceTree = "<group>"; };
+		331D0BAA2BD53C2E003223A8 /* StudyModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyModeViewController.swift; sourceTree = "<group>"; };
+		331D0BAC2BD5B02C003223A8 /* DeckSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckSelectorViewController.swift; sourceTree = "<group>"; };
 		3331FBB32B86366700DC9319 /* StudyModeBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyModeBrain.swift; sourceTree = "<group>"; };
 		33B46CAB2B84E09B009BCBFF /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		33BF27492B88149A0015CBE5 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -52,9 +70,13 @@
 		3331FBAB2B862D4700DC9319 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3331FBAD2B86316400DC9319 /* Category.swift */,
-				3331FBAF2B86327700DC9319 /* SubCategory.swift */,
-				3331FBB12B86350400DC9319 /* FlashCard.swift */,
+				331D0B962BD2EA32003223A8 /* Category+CoreDataClass.swift */,
+				331D0B972BD2EA32003223A8 /* Category+CoreDataProperties.swift */,
+				331D0B982BD2EA32003223A8 /* SubCategory+CoreDataClass.swift */,
+				331D0B992BD2EA32003223A8 /* SubCategory+CoreDataProperties.swift */,
+				331D0B9A2BD2EA32003223A8 /* FlashCard+CoreDataClass.swift */,
+				331D0B9B2BD2EA32003223A8 /* FlashCard+CoreDataProperties.swift */,
+				331D0B6F2BD2A7D3003223A8 /* BrainDeck.xcdatamodeld */,
 				3331FBB32B86366700DC9319 /* StudyModeBrain.swift */,
 			);
 			path = Model;
@@ -66,6 +88,11 @@
 				33E0F9512B841B5400C2F7E0 /* HomeViewController.swift */,
 				33B46CAB2B84E09B009BCBFF /* LearnViewController.swift */,
 				33BF27492B88149A0015CBE5 /* CategoryViewController.swift */,
+				331D0BA22BD317AB003223A8 /* SubCategoryViewController.swift */,
+				331D0BA62BD33A60003223A8 /* FlashcardViewController.swift */,
+				331D0BA82BD3CE28003223A8 /* FlashcardFormViewController.swift */,
+				331D0BAA2BD53C2E003223A8 /* StudyModeViewController.swift */,
+				331D0BAC2BD5B02C003223A8 /* DeckSelectorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -181,12 +208,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				33E0F9522B841B5400C2F7E0 /* HomeViewController.swift in Sources */,
+				331D0B9D2BD2EA32003223A8 /* Category+CoreDataProperties.swift in Sources */,
+				331D0BA72BD33A60003223A8 /* FlashcardViewController.swift in Sources */,
+				331D0B9C2BD2EA32003223A8 /* Category+CoreDataClass.swift in Sources */,
+				331D0BA12BD2EA32003223A8 /* FlashCard+CoreDataProperties.swift in Sources */,
+				331D0BA92BD3CE28003223A8 /* FlashcardFormViewController.swift in Sources */,
+				331D0BAD2BD5B02C003223A8 /* DeckSelectorViewController.swift in Sources */,
+				331D0B712BD2A7D3003223A8 /* BrainDeck.xcdatamodeld in Sources */,
+				331D0BAB2BD53C2E003223A8 /* StudyModeViewController.swift in Sources */,
+				331D0BA02BD2EA32003223A8 /* FlashCard+CoreDataClass.swift in Sources */,
+				331D0B9E2BD2EA32003223A8 /* SubCategory+CoreDataClass.swift in Sources */,
+				331D0BA32BD317AB003223A8 /* SubCategoryViewController.swift in Sources */,
+				331D0B9F2BD2EA32003223A8 /* SubCategory+CoreDataProperties.swift in Sources */,
 				3331FBB42B86366700DC9319 /* StudyModeBrain.swift in Sources */,
 				33B46CAC2B84E09B009BCBFF /* LearnViewController.swift in Sources */,
-				3331FBAE2B86316400DC9319 /* Category.swift in Sources */,
 				33E0F94E2B841B5400C2F7E0 /* AppDelegate.swift in Sources */,
-				3331FBB02B86327700DC9319 /* SubCategory.swift in Sources */,
-				3331FBB22B86350400DC9319 /* FlashCard.swift in Sources */,
 				33BF274A2B88149A0015CBE5 /* CategoryViewController.swift in Sources */,
 				33E0F9502B841B5400C2F7E0 /* SceneDelegate.swift in Sources */,
 			);
@@ -410,6 +446,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		331D0B6F2BD2A7D3003223A8 /* BrainDeck.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				331D0B702BD2A7D3003223A8 /* BrainDeck.xcdatamodel */,
+			);
+			currentVersion = 331D0B702BD2A7D3003223A8 /* BrainDeck.xcdatamodel */;
+			path = BrainDeck.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 33E0F9422B841B5400C2F7E0 /* Project object */;
 }

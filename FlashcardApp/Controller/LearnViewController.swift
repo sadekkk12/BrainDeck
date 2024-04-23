@@ -8,10 +8,7 @@
 import UIKit
 class LearnViewController: UIViewController {
     override func viewDidLoad() {
-        //title = "Learn More"
+        self.navigationItem.title = ""
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Learn more", style: .plain, target: nil, action: nil)
     }
 }
-//TODO Redo layout constraintsjj
-//TODO refactor Stacks and improve visually
-//TODO improve text readability for reader, check guidelines for whats best
-//TODO apply custom color schema
