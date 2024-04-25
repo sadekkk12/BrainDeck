@@ -10,6 +10,8 @@ import UIKit
 class FlashcardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+
+    // MARK: Properties
     var subCategory: SubCategory?
     var flashcards: [FlashCard] = []
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -20,6 +22,8 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         loadFlashcards()
     }
 
+    // MARK: - Configuration
+    /// Sets up tableView properties and aesthetics.
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -29,7 +33,7 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
         title = subCategory?.name ?? "Flashcards"
     }
-
+    /// Loads flashcards from the persistent container associated with the selected subcategory.
     private func loadFlashcards() {
         if let subCategory = subCategory, let set = subCategory.flashCard as? Set<FlashCard> {
             flashcards = Array(set)
@@ -37,6 +41,7 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.reloadData()
     }
 
+    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flashcards.count
     }
@@ -50,10 +55,9 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
             editFlashcard(at: indexPath)
         }
 
-    @objc private func didTapAdd() {
-        showFlashcardForm(for: nil)
-    }
 
+    // MARK: - Swipe Actions
+    /// Configures swipe actions for editing and deleting flashcards.
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
             self.deleteFlashcard(at: indexPath)
@@ -79,6 +83,11 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         showFlashcardForm(for: flashcard)
     }
 
+    // MARK: - Navigation to FlashcardCreationForm
+     @objc private func didTapAdd() {
+        showFlashcardForm(for: nil)
+    }
+
     private func showFlashcardForm(for flashcard: FlashCard?) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "FlashcardFormViewController") as? FlashcardFormViewController {
             vc.flashcard = flashcard
@@ -89,7 +98,8 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
+    // MARK: - Persistence
+    /// Saves any changes made to the context.
     private func saveContext() {
         do {
             try context.save()
@@ -100,7 +110,7 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     
-
+    /// Displays an error message in case of failure to save context changes.
     private func showError(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))

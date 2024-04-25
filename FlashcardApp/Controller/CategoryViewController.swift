@@ -20,21 +20,19 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         loadCategories()
     }
     
+     // MARK: - Configuration
+    /// Configures table view properties and navbar aesthetics.
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         self.view.backgroundColor = UIColor(red: 10/255.0, green: 22/255.0, blue: 35/255.0, alpha: 1)
-            
-            tableView.backgroundColor = UIColor(red: 10/255.0, green: 22/255.0, blue: 35/255.0, alpha: 1)
-            
-            navigationController?.navigationBar.tintColor = UIColor.white
-
-            
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
-            
-            title = "Category"
+        tableView.backgroundColor = UIColor(red: 10/255.0, green: 22/255.0, blue: 35/255.0, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))   
+        title = "Category"
     }
     
+     /// Loads categories from the persistent container and updates the table view.
     private func loadCategories() {
         do {
             categories = try context.fetch(Category.fetchRequest())
@@ -44,12 +42,16 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+   // MARK: - Error Handling
+   /// Displays an error alert with a custom message.
     private func showError(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
 
+    // MARK: - Category creation
+    /// Handles user action for adding a new category.
     @objc private func didTapAdd() {
         let alert = UIAlertController(title: "New Category", message: "Enter new Category", preferredStyle: .alert)
         alert.addTextField()
@@ -60,14 +62,14 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(alert, animated: true)
-    }
-
+    }    
+    /// Creates a new category and saves it to the context.
     private func createCategory(name: String) {
         let newCategory = Category(context: context)
         newCategory.name = name
         saveContext()
     }
-
+     /// Saves any changes to the persistent context.
     private func saveContext() {
         do {
             try context.save()
@@ -77,6 +79,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
+    // Mark: - Setting up TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
@@ -87,7 +90,8 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
-    // MARK: - Swipe Actions
+    // MARK: - UITableView Swipe Actions
+    /// Configures swipe actions for editing and deleting categories.
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
             self.deleteCategory(at: indexPath)
@@ -127,6 +131,8 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         saveContext()
     }
     
+    // MARK: - Navigation
+    /// Handles navigation to the subcategories of the selected category.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) 
         if let subCategoryVC = storyboard.instantiateViewController(withIdentifier: "SubCategoryViewController") as? SubCategoryViewController {
@@ -136,3 +142,5 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
 }
+
+// FIXME: Title glitching

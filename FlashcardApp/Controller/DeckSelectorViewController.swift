@@ -13,15 +13,15 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var subCategoryTextField: UITextField!
     
+    // MARK: - Properties
     var categoryPickerView = UIPickerView()
     var subCategoryPickerView = UIPickerView()
-    
     var categories: [Category] = []
     var subcategories: [SubCategory] = []
-    
     var selectedCategory: Category?
     var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPickerViews()
@@ -29,22 +29,14 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
         addTapGesture()
         categoryTextField.delegate = self
         subCategoryTextField.delegate = self
+         // Set the initial background color and navigation styles
         self.view.backgroundColor = UIColor(red: 10/255.0, green: 22/255.0, blue: 35/255.0, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
 
         
     }
-    
-    func addTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissPicker))
-        tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
-    }
-
-    @objc func dismissPicker() {
-        view.endEditing(true)
-    }
-    
+    // MARK: - Setup Methods
+    /// Configures the picker views for category and subcategory selection.
     func setupPickerViews() {
         categoryPickerView.dataSource = self
         categoryPickerView.delegate = self
@@ -54,6 +46,20 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
         subCategoryTextField.inputView = subCategoryPickerView
     }
 
+      /// Adds a tap gesture to dismiss the picker when tapping outside.
+    func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissPicker))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func dismissPicker() {
+        view.endEditing(true) // Dismiss the keyboard when the view is tapped
+    }
+    
+    
+     // MARK: - Fetching categories
+    /// Fetches categories from the Core Data store to populate the picker.
     func fetchCategories() {
         let request: NSFetchRequest<Category> = Category.fetchRequest()
         do {
@@ -65,7 +71,7 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
             print("Error fetching categories: \(error)")
         }
     }
-    
+      // MARK: - UITextFieldDelegate Methods
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == categoryTextField {
             subcategories = []
@@ -79,6 +85,7 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
         return true
     }
     
+    // MARK: - UIPickerView configuration
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
@@ -95,13 +102,16 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
         if pickerView == categoryPickerView {
             selectedCategory = categories[row]
             categoryTextField.text = selectedCategory?.name
-            subCategoryTextField.becomeFirstResponder()
+            subCategoryTextField.becomeFirstResponder() // Move focus to subcategory after selection
         } else if pickerView == subCategoryPickerView {
             subCategoryTextField.text = subcategories[row].name
-            subCategoryTextField.resignFirstResponder()
+            subCategoryTextField.resignFirstResponder() // Dismiss picker after selection
         }
     }
     
+
+    // MARK: - Navigation to Study Mode
+    /// Initiates study mode based on selected category and subcategory.
     @IBAction func startStudyModePressed(_ sender: UIButton) {
         guard let selectedCategory = selectedCategory,
               let subCategoryText = subCategoryTextField.text,
@@ -114,7 +124,7 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
             present(alert, animated: true)
             return
         }
-        
+        // Navigate to the study mode view controller with the selected subcategory
         if let studyVC = storyboard?.instantiateViewController(identifier: "StudyModeViewController") as? StudyModeViewController {
             studyVC.studyModeBrain = StudyModeBrain(subcategory: selectedSubcategory)
             navigationController?.pushViewController(studyVC, animated: true)
@@ -123,3 +133,5 @@ class DeckSelectorViewController: UIViewController, UIPickerViewDelegate, UIPick
 
 
 }
+
+// FIXME: UIpicker picks instantly
